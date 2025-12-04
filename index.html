@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Seshu Kumar Damarla | Industrial Data Science & Process Control</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Portfolio of Dr. Seshu Kumar Damarla – Industrial Data Analytics, Soft Sensors, Control Loop Performance Monitoring, and ML/AI for Process Industries."
+  />
+
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0b1020;
+      --card-bg: #0f1729;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.15);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.85);
+      --transition-fast: 0.18s ease-out;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background: radial-gradient(circle at top, #111827 0, #020617 55%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(2, 6, 23, 0.95),
+        rgba(2, 6, 23, 0.6),
+        transparent
+      );
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0 0.5rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #38bdf8, #1d4ed8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      box-shadow: 0 0 22px rgba(56, 189, 248, 0.5);
+      font-size: 1.1rem;
+    }
+
+    .nav-title {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .nav-title-main {
+      font-weight: 600;
+      font-size: 0.98rem;
+    }
+
+    .nav-title-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      position: relative;
+      padding-bottom: 0.2rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(to right, #38bdf8, #22c55e);
+      transition: width var(--transition-fast);
+      border-radius: 999px;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      padding-top: 2rem;
+      padding-bottom: 2.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 840px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.2rem 0.65rem 0.2rem 0.25rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      width: fit-content;
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.9);
+      font-size: 0.77rem;
+      color: var(--muted);
+    }
+
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 14px rgba(34, 197, 94, 0.9);
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 3vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-title span {
+      background: linear-gradient(to right, #38bdf8, #22c55e);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      max-width: 640px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .hero-subtitle strong {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.88rem;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      transition: transform var(--transition-fast),
+        box-shadow var(--transition-fast), background var(--transition-fast),
+        border-color var(--transition-fast), color var(--transition-fast);
+      background: transparent;
+      color: var(--text);
+    }
+
+    .btn-primary {
+      /* point this to your real CV file when you upload it */
+      background: radial-gradient(circle at 30% 0, #38bdf8, #1d4ed8);
+      border-color: rgba(56, 189, 248, 0.9);
+      box-shadow: 0 14px 35px rgba(37, 99, 235, 0.55);
+      font-weight: 500;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(37, 99, 235, 0.75);
+    }
+
+    .btn-ghost {
+      border-color: rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.7);
+      color: var(--muted);
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(148, 163, 184, 0.8);
+      color: var(--text);
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .btn-icon {
+      font-size: 1rem;
+      margin-left: 0.1rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.05rem;
+    }
+
+    .hero-meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.8;
+      font-size: 0.7rem;
+    }
+
+    .hero-meta-value {
+      font-weight: 500;
+      color: #e5e7eb;
+    }
+
+    .hero-right {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 28px;
+      padding: 1.2rem 1.2rem 1.35rem;
+      background: radial-gradient(circle at 0 0, #1f2937, #020617);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: var(--shadow-soft);
+      max-width: 360px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .hero-card-tag {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-card-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin: 0.5rem 0 0.75rem;
+    }
+
+    .chip {
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .chip-accent {
+      border-color: rgba(56, 189, 248, 0.85);
+      color: #e0f2fe;
+      background: radial-gradient(circle at 10% 0, rgba(56, 189, 248, 0.18), transparent);
+    }
+
+    .hero-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.8rem;
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
+    .sparkline {
+      height: 36px;
+      width: 120px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, rgba(56, 189, 248, 0.6), transparent);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sparkline-line {
+      position: absolute;
+      inset: 18% 0 0;
+      background: linear-gradient(to right, #22c55e, #38bdf8);
+      transform: skewX(-12deg);
+      opacity: 0.85;
+    }
+
+    /* Sections */
+
+    section {
+      margin-top: 2rem;
+    }
+
+    .section-header {
+      margin-bottom: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .section-eyebrow {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .section-desc {
+      font-size: 0.86rem;
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    @media (min-width: 820px) {
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.96),
+        rgba(15, 23, 42, 0.94)
+      );
+      border: 1px solid rgba(30, 64, 175, 0.6);
+      padding: 1rem 1rem 0.95rem;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.85);
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition-fast),
+        box-shadow var(--transition-fast), border-color var(--transition-fast),
+        background var(--transition-fast);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -30%;
+      background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.18), transparent);
+      opacity: 0;
+      transition: opacity var(--transition-fast);
+      pointer-events: none;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 22px 55px rgba(15, 23, 42, 0.9);
+      border-color: rgba(56, 189, 248, 0.65);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-heading {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .card-subheading {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .card-body {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      font-size: 0.74rem;
+      color: var(--muted);
+    }
+
+    .tag {
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+    }
+
+    .card-footer {
+      margin-top: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      color: #bfdbfe;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.76rem;
+    }
+
+    .pill {
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--muted);
+    }
+
+    .pill-strong {
+      border-color: rgba(56, 189, 248, 0.85);
+      color: #e0f2fe;
+      background: var(--accent-soft);
+    }
+
+    /* Contact */
+
+    .contact-card {
+      border-radius: var(--radius-xl);
+      background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.2), #020617);
+      border: 1px solid rgba(56, 189, 248, 0.8);
+      box-shadow: var(--shadow-soft);
+      padding: 1.25rem 1.25rem 1.4rem;
+      margin-top: 1.2rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 720px) {
+      .contact-card {
+        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+        align-items: center;
+      }
+    }
+
+    .contact-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .contact-text {
+      font-size: 0.86rem;
+      color: #e5e7eb;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-meta {
+      font-size: 0.8rem;
+      color: #e5e7eb;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .contact-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #38bdf8;
+    }
+
+    .social-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .social-link {
+      font-size: 0.8rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.85);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: border-color var(--transition-fast),
+        background var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .social-link:hover {
+      border-color: rgba(56, 189, 248, 0.85);
+      background: rgba(15, 23, 42, 0.98);
+      transform: translateY(-1px);
+    }
+
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      font-size: 0.75rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    /* Small-screen tweaks */
+
+    @media (max-width: 600px) {
+      .nav-links {
+        display: none;
+      }
+      .page {
+        padding-inline: 1rem;
+      }
+      .hero-card {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="page">
+      <nav class="nav">
+        <div class="nav-left">
+          <div class="logo-circle">SD</div>
+          <div class="nav-title">
+            <div class="nav-title-main">Seshu Kumar Damarla</div>
+            <div class="nav-title-sub">Industrial Data Science & Process Control</div>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#publications">Publications</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Open to Industrial Data Science & APC roles
+        </div>
+        <h1 class="hero-title">
+          Applying <span>ML & AI</span> to real problems in process and chemical industries.
+        </h1>
+        <p class="hero-subtitle">
+          I am <strong>Dr. Seshu Kumar Damarla</strong>, a Research Associate in Chemical and Materials Engineering at
+          the University of Alberta. My work focuses on <strong>process data analytics, soft sensors, control loop
+            performance monitoring, valve stiction diagnosis, and explainable ML</strong> for oil sands, refineries, and
+          chemical plants.
+        </p>
+        <div class="hero-actions">
+          <!-- TODO: update this href to your real CV PDF link when you host it -->
+          <a class="btn btn-primary" href="Seshu_Damarla_CV.pdf" target="_blank" rel="noopener">
+            Download CV <span class="btn-icon">⬇️</span>
+          </a>
+          <a class="btn btn-ghost" href="#projects">
+            View key projects <span class="btn-icon">→</span>
+          </a>
+        </div>
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">Expertise</span>
+            <span class="hero-meta-value">Soft sensors · Stiction · APC & monitoring</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">Industries</span>
+            <span class="hero-meta-value">Oil sands · Refining · Mining · Chemical</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">Location</span>
+            <span class="hero-meta-value">Edmonton, Canada (open to relocation)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <article class="hero-card" aria-label="Snapshot of current work">
+          <div class="hero-card-tag">Current focus</div>
+          <div class="hero-card-title">Industrial ML for sensing, monitoring & control</div>
+          <p class="card-body" style="font-size: 0.8rem; color: #9ca3af;">
+            Integrating machine learning with control and monitoring: robust soft sensors, valve stiction detection,
+            MPC loop analytics, and data-driven diagnostics for large-scale industrial plants.
+          </p>
+          <div class="hero-card-chip-row">
+            <span class="chip chip-accent">Process data analytics</span>
+            <span class="chip">Soft sensors</span>
+            <span class="chip">Stiction detection</span>
+            <span class="chip">MPC performance</span>
+          </div>
+          <div class="hero-card-footer">
+            <span>Real plant &amp; pilot data</span>
+            <div class="sparkline" aria-hidden="true">
+              <div class="sparkline-line"></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="section-header">
+        <div class="section-eyebrow">Profile</div>
+        <h2 class="section-title">About me</h2>
+        <p class="section-desc">
+          I bridge <strong>chemical/process engineering</strong> with <strong>modern machine learning</strong>,
+          working on industrial projects with Syncrude, Suncor, Shell Canada, Nutrien, and the University of Alberta.
+        </p>
+      </div>
+
+      <div class="grid grid-2">
+        <div>
+          <p style="font-size: 0.86rem; color: var(--muted); margin-bottom: 0.75rem;">
+            I am a <strong>Research Associate</strong> in Chemical and Materials Engineering at the University of
+            Alberta and previously worked as an <strong>Industrial Researcher</strong> with Syncrude Canada. My
+            interests span control loop performance monitoring, soft-sensor development, process monitoring, and
+            industrial data analytics.
+          </p>
+          <p style="font-size: 0.86rem; color: var(--muted); margin-bottom: 0.75rem;">
+            I enjoy taking raw historian data, vibration signals, and lab measurements and turning them into
+            <strong>deployable and interpretable models</strong> that support operations, reliability, and APC teams.
+          </p>
+        </div>
+        <div>
+          <div class="pill-row" style="margin-bottom: 0.7rem;">
+            <span class="pill pill-strong">Industrial Data Science</span>
+            <span class="pill">Control loop performance</span>
+            <span class="pill">Soft sensors</span>
+            <span class="pill">Valve stiction detection</span>
+            <span class="pill">MPC & APC</span>
+            <span class="pill">Explainable ML (SHAP/LIME)</span>
+            <span class="pill">Python · MATLAB · Simulink</span>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--muted);">
+            I am particularly interested in roles where I can work closely with process engineers and data scientists to
+            design <strong>practical, maintainable ML/AI solutions</strong> for real plants.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="section-header">
+        <div class="section-eyebrow">Capabilities</div>
+        <h2 class="section-title">Key skills</h2>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <h3 class="card-heading">Machine Learning & AI</h3>
+          <p class="card-body">
+            Supervised &amp; unsupervised learning, anomaly detection, deep learning for signals, time-series modeling,
+            and model explainability tailored for industrial processes.
+          </p>
+          <div class="card-tags">
+            <span class="tag">GPR</span>
+            <span class="tag">Tree-based models</span>
+            <span class="tag">Autoencoders / VAE</span>
+            <span class="tag">CNN / LSTM</span>
+            <span class="tag">Anomaly detection</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-heading">Process & Control</h3>
+          <p class="card-body">
+            Control loop performance monitoring, valve stiction detection and quantification, APC/MPC analysis, and
+            chemometric monitoring for quality and fault diagnosis.
+          </p>
+          <div class="card-tags">
+            <span class="tag">APC / MPC</span>
+            <span class="tag">Loop monitoring</span>
+            <span class="tag">Stiction</span>
+            <span class="tag">Chemometrics</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-heading">Tools & Engineering</h3>
+          <p class="card-body">
+            Python, MATLAB/Simulink, SQL, and modern ML libraries, with experience in building end-to-end pipelines
+            from data preprocessing to deployment-ready models.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Python</span>
+            <span class="tag">MATLAB</span>
+            <span class="tag">TensorFlow / PyTorch</span>
+            <span class="tag">Scikit-learn</span>
+            <span class="tag">SQL</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="section-header">
+        <div class="section-eyebrow">Selected work</div>
+        <h2 class="section-title">Industrial projects & applied research</h2>
+        <p class="section-desc">
+          A sample of projects where I applied ML, statistical modeling, and control to solve practical problems in oil
+          sands and process industries.
+        </p>
+      </div>
+
+      <div class="grid grid-2">
+        <article class="card">
+          <h3 class="card-heading">Soft sensors for naphtha–bitumen ratio (Syncrude)</h3>
+          <p class="card-subheading">Soft-sensor modeling for extraction facility centrifuges.</p>
+          <p class="card-body">
+            Developed and deployed soft sensors (predictive models) to estimate the ratio of naphtha and bitumen in the
+            feed stream of centrifuges in the extraction facility at Syncrude Canada Ltd., improving monitoring of feed
+            quality and supporting better operational decisions.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Soft sensor</span>
+            <span class="tag">Regression</span>
+            <span class="tag">Oil sands extraction</span>
+          </div>
+          <div class="card-footer">
+            <span>Deployed in plant environment</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="card-heading">Sanding detection in hydro-transport pipelines</h3>
+          <p class="card-subheading">Empirical data-driven approach for slurry preparation plant.</p>
+          <p class="card-body">
+            Devised an empirical method for detecting sanding in hydro-transport pipelines in the slurry preparation
+            plant at Syncrude Canada Ltd., using process data patterns to indicate abnormal transport and potential
+            plugging risks.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Anomaly detection</span>
+            <span class="tag">Hydro-transport</span>
+            <span class="tag">Oil sands</span>
+          </div>
+          <div class="card-footer">
+            <span>Operational support tool</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="card-heading">Foaming detection in amine contactors (Syncrude)</h3>
+          <p class="card-subheading">Multivariate statistical monitoring for upgrading facility.</p>
+          <p class="card-body">
+            Formulated a method based on multivariate statistical techniques to detect foaming in amine contactors in
+            the upgrading facility, enabling early detection and corrective action to maintain absorber performance.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Chemometric monitoring</span>
+            <span class="tag">Foaming detection</span>
+            <span class="tag">Upgrader</span>
+          </div>
+          <div class="card-footer">
+            <span>Improved reliability</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="card-heading">NIR-based soft sensors for gasoline properties (Suncor)</h3>
+          <p class="card-subheading">Quality prediction from spectroscopy data.</p>
+          <p class="card-body">
+            Developed inferential models using Near Infrared Spectroscopy data to predict gasoline properties for Suncor
+            Energy Inc., enhancing product quality assessment and enabling faster feedback than lab measurements.
+          </p>
+          <div class="card-tags">
+            <span class="tag">NIR</span>
+            <span class="tag">Soft sensor</span>
+            <span class="tag">Gasoline quality</span>
+          </div>
+          <div class="card-footer">
+            <span>Refining application</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="card-heading">APC decision support for control engineers (Shell Canada)</h3>
+          <p class="card-subheading">Decision-support system for operator actions.</p>
+          <p class="card-body">
+            Led an Advanced Process Control Decision Support project for Shell Canada, building tools to help control
+            engineers interpret operator actions on critical process variables and improve APC utilization.
+          </p>
+          <div class="card-tags">
+            <span class="tag">APC</span>
+            <span class="tag">Decision support</span>
+            <span class="tag">Human-in-the-loop</span>
+          </div>
+          <div class="card-footer">
+            <span>Shell Canada collaboration</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="card-heading">GUI for DCS screenshot–based model identification (Nutrien)</h3>
+          <p class="card-subheading">From DCS screenshots to controller-ready models.</p>
+          <p class="card-body">
+            Developed a graphical user interface to extract data from screenshots of a distributed control system and
+            identify process models, which were subsequently used to design PI/PID controllers for Nutrien operations.
+          </p>
+          <div class="card-tags">
+            <span class="tag">GUI</span>
+            <span class="tag">System identification</span>
+            <span class="tag">Controller design</span>
+          </div>
+          <div class="card-footer">
+            <span>Prototype for control engineering teams</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Publications & Patents & Books -->
+    <section id="publications">
+      <div class="section-header">
+        <div class="section-eyebrow">Track record</div>
+        <h2 class="section-title">Selected IP, books & publications</h2>
+        <p class="section-desc">
+          A subset of my patent, books, and journal papers related to process control, soft sensors, and industrial data
+          science. See my Google Scholar profile for a full list.
+        </p>
+      </div>
+
+      <div class="grid">
+        <!-- Patent -->
+        <article class="card">
+          <h3 class="card-heading">Method for detecting and quantifying valve stiction in process control loops</h3>
+          <p class="card-subheading">US Patent US20240376998A1, 2023</p>
+          <p class="card-body">
+            Practical methods for detection and quantification of valve stiction using routine control loop data,
+            enabling targeted maintenance and improved control loop performance.
+          </p>
+          <div class="card-footer">
+            <a class="card-link" href="https://patents.google.com/patent/US20240376998A1/en" target="_blank" rel="noopener">
+              View patent <span>↗</span>
+            </a>
+            <span>Valve stiction</span>
+          </div>
+        </article>
+
+        <!-- Books -->
+        <article class="card">
+          <h3 class="card-heading">Fractional Order Processes: Simulation, Identification and Control</h3>
+          <p class="card-subheading">CRC Press, Taylor &amp; Francis, 2018</p>
+          <p class="card-body">
+            Monograph on modeling, simulation, and control of fractional order processes, including identification and
+            controller design techniques for complex process dynamics.
+          </p>
+          <div class="card-footer">
+            <a class="card-link" href="https://www.taylorfrancis.com/books/mono/10.1201/9780429504433/fractional-order-processes-madhusree-kundu-seshu-kumar-damarla" target="_blank" rel="noopener">
+              Book details <span>↗</span>
+            </a>
+            <span>Process control</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="card-heading">Chemometric Monitoring: Product Quality Assessment, Process Fault Detection, and Applications</h3>
+          <p class="card-subheading">CRC Press, Taylor &amp; Francis, 2017</p>
+          <p class="card-body">
+            Co-authored book on chemometric techniques for product quality assessment, process monitoring, and fault
+            detection across industrial applications.
+          </p>
+          <div class="card-footer">
+            <a class="card-link" href="https://www.taylorfrancis.com/books/mono/10.1201/9781315155135/chemometric-monitoring-madhusree-kundu-palash-kumar-kundu-seshu-damarla" target="_blank" rel="noopener">
+              Book details <span>↗</span>
+            </a>
+            <span>Chemometrics</span>
+          </div>
+        </article>
+
+        <!-- Selected journal papers -->
+        <article class="card">
+          <h3 class="card-heading">Machine learning for industrial sensing and control: A survey and practical perspective</h3>
+          <p class="card-subheading">Control Engineering Practice, 2024</p>
+          <p class="card-body">
+            Survey and practical guidance on applying machine learning to industrial sensing and control, with emphasis
+            on deployment, data challenges, and real-world constraints.
+          </p>
+          <div class="card-footer">
+            <a class="card-link" href="https://doi.org/10.1016/j.conengprac.2024.105841" target="_blank" rel="noopener">
+              Article link <span>↗</span>
+            </a>
+            <span>Survey & practice</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="card-heading">Control valve stiction detection using Markov Transition Field and Deep CNN</h3>
+          <p class="card-subheading">Can. J. Chem. Eng., 2023</p>
+          <p class="card-body">
+            Image-based method using Markov Transition Field and deep convolutional neural networks to detect control
+            valve stiction, leveraging time-series-to-image encoding.
+          </p>
+          <div class="card-footer">
+            <a class="card-link" href="https://doi.org/10.1002/cjce.25054" target="_blank" rel="noopener">
+              Article link <span>↗</span>
+            </a>
+            <span>Image-based stiction</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="card-heading">Statistical tests-based practical methods for stiction detection and quantification</h3>
+          <p class="card-subheading">Ind. Eng. Chem. Res., 2023</p>
+          <p class="card-body">
+            Developed statistical test-based methods that provide practical and implementable approaches for detecting
+            and quantifying stiction in industrial control valves.
+          </p>
+          <div class="card-footer">
+            <a class="card-link" href="https://doi.org/10.1021/acs.iecr.2c03564" target="_blank" rel="noopener">
+              Article link <span>↗</span>
+            </a>
+            <span>Valve diagnostics</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="card-heading">ConvLSTM and self-attention aided CCA for multi-output soft sensor modeling</h3>
+          <p class="card-subheading">IEEE Transactions on Instrumentation &amp; Measurement, 2023</p>
+          <p class="card-body">
+            Proposed a ConvLSTM and self-attention enhanced canonical correlation analysis framework for multi-output
+            soft sensor modeling in complex industrial processes.
+          </p>
+          <div class="card-footer">
+            <a class="card-link" href="https://doi.org/10.1109/TIM.2022.3225004" target="_blank" rel="noopener">
+              Article link <span>↗</span>
+            </a>
+            <span>Soft sensors</span>
+          </div>
+        </article>
+
+        <!-- You can keep adding more cards as needed -->
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="section-header">
+        <div class="section-eyebrow">Get in touch</div>
+        <h2 class="section-title">Contact</h2>
+      </div>
+
+      <div class="contact-card">
+        <div>
+          <div class="contact-title">Let’s collaborate on industrial data science & APC.</div>
+          <p class="contact-text">
+            I am open to roles in <strong>industrial data science, advanced process control, soft-sensor development,
+              and ML/AI for process industries</strong>. If your team works with historian data, control loops, or
+            plant-wide optimization, I would be happy to discuss how I can contribute.
+          </p>
+          <div class="contact-meta">
+            <span><span class="dot"></span> Email:
+              <a href="mailto:damarla@ualberta.ca">damarla@ualberta.ca</a></span>
+            <span><span class="dot"></span> Location: Edmonton, Canada (open to remote and relocation)</span>
+          </div>
+        </div>
+        <div>
+          <div class="social-row">
+            <a class="social-link" href="https://www.linkedin.com/in/seshu-kumar-damarla-a46068198/" target="_blank" rel="noopener">
+              <span>💼</span> LinkedIn
+            </a>
+            <a class="social-link" href="https://github.com/seshu-damarla" target="_blank" rel="noopener">
+              <span>📊</span> GitHub
+            </a>
+            <a class="social-link" href="https://scholar.google.ca/citations?user=KhS5aKIAAAAJ&hl=en" target="_blank" rel="noopener">
+              <span>📰</span> Google Scholar
+            </a>
+          </div>
+          <p style="font-size: 0.78rem; color: #cbd5f5; margin-top: 0.75rem;">
+            When contacting me, feel free to include a brief description of your process, data sources, and current
+            challenges so I can propose concrete ideas from the outset.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> Seshu Kumar Damarla</span>
+    <span>Built with HTML &amp; CSS – lightweight and easy to host (e.g., GitHub Pages).</span>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Smooth scroll for in-page links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        const targetId = this.getAttribute("href");
+        if (!targetId || targetId === "#") return;
+        const targetEl = document.querySelector(targetId);
+        if (!targetEl) return;
+
+        e.preventDefault();
+        window.scrollTo({
+          top: targetEl.offsetTop - 70,
+          behavior: "smooth",
+        });
+      });
+    });
+  </script>
+</body>
+</html>
